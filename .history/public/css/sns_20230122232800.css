@@ -1,0 +1,724 @@
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+.button {
+    display: inline-block;
+    border-style: solid;
+    color: black;
+    background-color: rgb(225, 223, 223);
+    border-width:1px;
+    border-color: darkgray;
+    text-decoration: none;
+    }
+
+/* 共通レイアウト部分 */
+.Layout-hed, .topLayout-hed {
+    width: auto;
+    height: auto;
+    margin: 0;
+    background-color: #FFFEF9;
+    border-bottom: 5px dotted #72897A;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.topback a {
+    margin: 25px;
+}
+
+.topback input {
+    margin-top: 25px;
+}
+
+.Layout-fot, .topLayout-fot {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    /* height: auto; */
+    border: 5px solid #72897A;
+    padding: 10px 50px;
+    /* background: #e0ffff; */
+    background: linear-gradient(lightcyan, snow);
+}
+
+.Layout-fot .top-warning h3, .topLayout-fot .top-warning h3 {
+    color: red;
+    margin-top: 10px;
+}
+
+.Layout-fot .top-warning p, .topLayout-fot .top-warning p {
+    line-height: 1;
+    margin: 0;
+}
+
+.Layout-button a {
+    padding: 5px 10px;
+    width: 5vh;
+}
+
+/* .top-jump {
+    opacity: 0;
+    transform: translateY(100px);
+} */
+
+/* .top-jump a {
+    height: 40px;
+    width: 150px;
+    background-color: blue;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+    padding-top: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+} */
+
+/* .top-jump a:hover {
+    background: rgb(0, 0, 150, 0.5);
+} */
+
+/*リンクの形状*/
+.top-jump a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background:blue;
+	border-radius: 5px;
+	width: 150px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase; 
+	text-decoration: none;
+	transition:all 0.3s;
+}
+
+.top-jump a:hover{
+	background: rgb(0, 0, 150, 0.5);
+}
+
+/*リンクを右下に固定*/
+.top-jump {
+	position: fixed;
+	right: 20px;
+	bottom: 0;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+.top-jump.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+    from {
+    opacity: 0;
+	transform: translateY(100px);
+    }
+    to {
+    opacity: 1;
+	transform: translateY(0);
+    }
+}
+
+/*　下に下がる動き　*/
+
+.top-jump.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+    from {
+    opacity: 1;
+	transform: translateY(0);
+    }
+    to {
+    opacity: 1;
+	transform: translateY(100px);
+    }
+}
+
+/* section */
+section {
+    margin: 20px 50px;
+}
+
+.background {
+    background: linear-gradient(white,lightskyblue, white);
+}
+/* index.php */
+.top-textmenu {
+    height: 50vh;
+}
+
+.topindexs {
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(lightskyblue, white);
+}
+
+.top-imgs {
+    position: relative;
+    border-bottom: #a9a9a9 dotted 5px;
+}
+
+.top-imgs img {
+    object-fit: cover;
+    /* object-position: 0 100px; */
+    width: 100%;
+    /* max-width: 100%; */
+    height: 200px;
+    max-height: 200px;
+    opacity: 0.8;
+}
+
+.index-title {
+    z-index: 10;
+    position: absolute;
+    color: white;
+    top: 45px;
+    left: 50px;
+}
+
+.warning {
+    margin: 0;
+    height: auto;
+    border: 5px solid #72897A;
+    padding: 10px 50px;
+    background: linear-gradient(lightcyan, snow);
+}
+
+.warning h3 {
+    color: red;
+    margin-top: 10px;
+}
+
+.warning p {
+    line-height: 1;
+    margin: 0;
+}
+
+.top-titletext h2 {
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px white,-2px -2px white, 2px 2px white, -2px -2px white ;
+}
+
+.top-menu {
+    padding: 5%;
+    border: 3px dashed #3cb371;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    /* background: linear-gradient(lightskyblue, white); */
+    background: white;
+    text-align: center;
+}
+
+.top-list {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 2px solid #3cb371;
+    margin: -10px;
+}
+
+.top-list a {
+    height: 25px;
+    margin-top: 22px;
+}
+
+/* login.php */
+.login {
+    height: 55vh;
+}
+
+.user-name, .user-password {
+    display: flex;
+    /* padding: 20px 0; */
+    line-height: 2;
+}
+
+.user-name input, .user-password input {
+    height: 1rem;
+    margin: 27px 0;
+}
+
+.login-button {
+    /* position: relative;
+    top: 0;
+    left: 90%; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reset-move a {
+    /* position: relative;
+    top: 0;
+    left: 80%; */
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    text-decoration: none;
+}
+
+.login-date {
+    width: 65%;
+    margin: 0 auto;
+}
+
+/* register.php */
+.register {
+    margin: 0 auto;
+    width: 65%;
+    height: 60vh;
+}
+
+.regi-date {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40%;
+}
+
+.regi-date input {
+    height: 1rem;
+    margin: 20px 0;
+}
+
+.regi-img {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.regi-img input {
+    margin: 10px 0;
+}
+
+.regi-button {
+    text-align: right;
+    margin-right: 250px;
+}
+
+.regi-button a {
+    margin: 10px 0;
+}
+
+/* regicomp.php */
+.regicomp {
+    background: white;
+    width: 65vh;
+    text-align: center;
+    line-height: 10px;
+    border: 3px dashed #3cb371;
+    border-radius: 10px;
+    /* position: absolute;  要素を浮かす */
+    /*relativeを指定した親要素を支点とした位置をすべて0に指定↓*/
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 20vh auto; /*上下左右中央に*/
+    height: 35vh;
+}
+
+.regicomps {
+    height: 50vh;
+}
+
+.regicomp-text h2 {
+    margin: 30px 0;
+    color: red;
+}
+
+.regicomp-text {
+    margin-top: 50px;
+}
+
+.comp-button {
+    margin: 30px;
+}
+
+/* list.php */
+.list {
+    /* height: auto; */
+    height: auto;
+}
+
+.list-button, .detail-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list-post a,.user-post a, .next-com a {
+    margin: 0 15px 0 0;
+}
+
+.detail-back button {
+    margin: 0 15px 0 0;
+}
+
+.top-img, .detail-icon {
+    display: flex;
+    width: 75vh;
+}
+
+.top-img img, .detail-icon img {
+    width: 30vh;
+    height: auto;
+}
+
+.top-img p {
+    margin-left: 20px;
+    overflow-wrap: break-all;
+}
+
+.top-created p {
+    text-align: right;
+    margin: 0 100px 0 0;
+}
+
+.paging p {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* detail.php */
+.detail-main, .comment-sources {
+    text-align: center;
+    border-bottom: 3px dashed #3cb371;
+}
+
+.detail-icon, .comment-source  {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.detail-icon img, .comment-source img {
+    width: 30vh;
+}
+
+.detail-icon h4, .comment-source h4 {
+    padding: 50px 0 0 10px;
+    flex: 1;
+}
+
+.detail-text {
+    width: 80vh;
+    margin: 20px auto;
+    height: 150px;
+    background-color: white;
+    border: 3px dashed #3cb371;
+}
+
+.detail-text p {
+    margin: auto;
+    /* width: 75%; */
+    overflow-wrap: break-all;
+}
+
+.detail-img {
+    display: flex;
+    margin: 0 auto;
+    /* padding: 0 0 0 250px; */
+    justify-content: center;
+}
+
+.detail-img img {
+    width: 25vh;
+    height: auto;
+    margin: 0 20px 0 0;
+}
+
+.detail-createds {
+    display: flex;
+    justify-content: right;
+}
+
+.detail-createds span {
+    padding-right: 50px;
+}
+
+.detail-created {
+    text-align: right;
+    padding-right: 30px;
+}
+
+/* いいね画像 */
+.LikesIcon i {
+    line-height: 58px;
+    padding-right: 150px;
+}
+
+.user-icom img {
+    width: 25vh;
+    height: auto;
+}
+
+.user-icom {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.comment-text {
+    width: 80vh;
+    border: 3px dashed #3cb371;
+    background: white;
+}
+
+.user-icom p {
+    overflow-wrap: break-all;
+}
+
+.comment-created p {
+    text-align: right;
+    margin: 5px 60px 50px 0;
+}
+
+/* comment.php */
+
+.comment-source {
+    display: flex;
+    width: 75vh;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.comment-source h4 {
+    text-align: center;
+}
+
+.comment-post {
+    display: flex;
+}
+
+.comment-post textarea {
+    width: 80vh;
+    margin: 20px auto;
+    align-items: center;
+    border: 3px dashed #3cb371;
+    border-radius: 10px;
+}
+
+.comment-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-button button {
+    margin-right: 100px;
+}
+
+/* post.php */
+
+.post-icon img {
+    width: 30vh;
+    height: auto;
+}
+
+/* .post-name p {
+    margin: 10vh 0 0 15vh;
+} */
+.post-top {
+    display: flex;
+    justify-content: center;
+}
+
+.post-icon {
+    display: flex;
+    justify-content: center;
+    width: 80vh;
+}
+
+.post-post {
+    text-align: right;
+    margin: 10px 100px;
+    width: 10vh;
+}
+
+.post-text {
+    text-align: center;
+}
+
+.post-text textarea {
+    width: 80vh;
+    margin: 20px auto;
+    align-items: center;
+    border: 3px dashed #3cb371;
+    border-radius: 10px;
+}
+
+.post-name p {
+    width: 30vh;
+    margin: 90px 0 0 30px;
+}
+
+.post-post button {
+    width: 6vh;
+    margin: 100px 0 0 30px;
+}
+
+.posts-img {
+    text-align: right;
+    margin-right: 40vh;
+    margin-bottom: 30px;
+}
+
+.ImgPost input {
+    margin-top: 10px;
+}
+
+/* UserChange.php */
+.userchange {
+    height: 65vh;
+}
+
+.namechange, .emailchange {
+    display: flex;
+    justify-content: space-between;
+    width: 35vh;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.namechange p, .emailchange p, .passchange p {
+    width: 150px;
+    white-space: nowrap
+}
+
+.imgchange {
+    margin: 20px 0;
+}
+
+.passchange {
+    line-height: 1px;
+    margin-top: 50px;
+}
+
+.passchange p {
+    white-space: nowrap
+}
+
+.passchange-note {
+    display: flex;
+    justify-content: space-between;
+    width: 35vh;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.passchange p {
+    /* color: red; */
+    margin: 20px 0;
+}
+
+/* changecomp.php */
+.changecomp {
+    height: 40vh;
+}
+
+.changemenu {
+    text-align: center;
+    /* margin-top: 30vh; */
+    border: 3px dashed #3cb371;
+    width: 65vh;
+    margin: 25vh auto 0;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.changemenu a {
+    margin: 10px 0;
+}
+
+/* reset.php */
+.checkcomp button {
+    writing-mode: horizontal-tb;
+    width: 10vh;
+    position: absolute;
+    top: 300px;
+}
+
+
+/* resetend.php */
+.resetend {
+    height: 40vh;
+}
+
+.resetend-nemu {
+    text-align: center;
+    /* margin-top: 30vh; */
+    border: 3px dashed #3cb371;
+    width: 65vh;
+    margin: 25vh auto 0;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.resetend-nemu a {
+    margin: 10px 0;
+}
+
+/* withcomp.php */
+.withcomp {
+    height: 40vh;
+}
+
+.withcomp-menu {
+    text-align: center;
+    /* margin-top: 30vh; */
+    border: 3px dashed #3cb371;
+    width: 65vh;
+    margin: 25vh auto 0;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.withcomp-menu a {
+    margin: 10px 0;
+}
+
+/* reset.php */
+.reset {
+    height: 60vh;
+}
+
+.checkemail {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 50px 0 0 0;
+}
+
+.checkname, .checkpass {
+    display: flex;
+    justify-content: space-between;
+    width: 35vh;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* withdrawal.php */
+.withdrawal {
+    height: 55vh;
+}
+
+.withdrawalName, .withdrawalEmail, .withdrawalPass {
+    display: flex;
+    justify-content: space-between;
+    width: 35vh;
+    align-items: center;
+    /* margin: 20px 0; */
+}

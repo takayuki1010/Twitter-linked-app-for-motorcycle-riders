@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Models\MainUser;
+
+class snsprocess extends Controller
+{
+    //
+
+    public function __construct() {
+        // インスタンス化
+        $user = new Users;
+    }
+
+    public function regi_process(Request $request) {
+        // 渡された値を変数へ保存
+        $name = $request->reginame;
+        $email = $request->regiemail;
+        $pass = $request->regipass;
+        $img = $request->regiimg;
+
+        // バリデーション
+        $validate_list = [
+            'reginame' => 'required|string|max:10',
+            ''
+        ]
+
+        return redirect('regicomp');
+    }
+}

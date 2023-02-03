@@ -1,0 +1,16 @@
+<?php
+// comment画面へ遷移
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class commentindexController extends Controller
+{
+    public function commentindex($id)
+    {
+        // コメントのユーザー情報
+        $messages = Message::find($id);
+
+        return view('comment', compact('messages'));
+    }
+}
