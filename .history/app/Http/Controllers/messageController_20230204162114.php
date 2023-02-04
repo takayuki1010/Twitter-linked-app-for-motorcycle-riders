@@ -53,8 +53,8 @@ class messageController extends Controller
         // バリデーション
         $params = [
             'PostText' => ['required', 'string', 'max:140'],
-            'postimg1' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000'],
-            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000']
+            'postimg1' => ['nullable','file','image'],
+            'postimg2' => ['nullable','file','image']
         ];
         $this->validate($request, $params);
 

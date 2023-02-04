@@ -53,8 +53,8 @@ class messageController extends Controller
         // バリデーション
         $params = [
             'PostText' => ['required', 'string', 'max:140'],
-            'postimg1' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000'],
-            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000']
+            'postimg1' => ['nullable','file','image','mimes:jpg,jpeg,png'],
+            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png']
         ];
         $this->validate($request, $params);
 
@@ -76,7 +76,7 @@ class messageController extends Controller
             $postImg1 = 'images/20200501_noimage.jpg';
         }
 
-        if($request->has('postimg2') && $postImg1 === 'images/20200501_noimage.jpg') //２が入っているのに１が入っていない
+        if($request->has('postimg2') && $postImg1 == 'images/20200501_noimage.jpg') //２が入っているのに１が入っていない
         {
             return redirect()->back()->with('error', '上から画像を入力してください。');
         }

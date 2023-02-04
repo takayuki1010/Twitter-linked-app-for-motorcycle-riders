@@ -53,8 +53,8 @@ class messageController extends Controller
         // バリデーション
         $params = [
             'PostText' => ['required', 'string', 'max:140'],
-            'postimg1' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000'],
-            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000']
+            'postimg1' => ['nullable','mimes:jpg,jpeg,png'],
+            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png']
         ];
         $this->validate($request, $params);
 
@@ -68,7 +68,9 @@ class messageController extends Controller
         // 画像１があるか
         if($request->has('postimg1'))
         { //入っていれば名前をつけ保存
-            $postimgname1 = $request->file('postimg1')->getClientOriginalName();
+            // $postimgname1 = $request->file('postimg1')->getClientOriginalName();
+            $postimgname1 = $request->postimg1;
+            dd($postimgname1);
             $imgnewname1 = date('Ymd_His'.'_'.$postimgname1);
             $postImgDate1 = $request->file('postimg1')->storeAs('public/img', $imgnewname1);
             $postImg1 = 'storage/img/' . $imgnewname1;

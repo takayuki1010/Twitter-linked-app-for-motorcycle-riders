@@ -53,10 +53,10 @@
                 <span style="color:red; font-size: 12px;">{{ session('error') }}</span>
                 <!-- 投稿する画像　二つまで　一覧表示は１番目のみ表示 -->
                 <div class="ImgPost">
-                    <input type="file" value="{{ old('postimg1') }}" accept="image/jpeg, image/png" name="postimg1">
+                    <input type="img" value="{{ old('postimg1') }}" accept="image/jpeg, image/png" name="postimg1">
                 </div>
                 <div class="ImgPost">
-                    <input type="file" value="{{ old('postimg2') }}" accept="image/jpeg, image/png" name="postimg2">
+                    <input type="img" value="{{ old('postimg2') }}" accept="image/jpeg, image/png" name="postimg2">
                 </div>
             </div>
         </form>

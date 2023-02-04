@@ -51,10 +51,11 @@ class messageController extends Controller
     public function store(Request $request)
     {
         // バリデーション
+        dd($request->postimg1);
         $params = [
             'PostText' => ['required', 'string', 'max:140'],
-            'postimg1' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000'],
-            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png','max:2000']
+            'postimg1' => ['nullable','file','image','mimes:jpg,jpeg,png'],
+            'postimg2' => ['nullable','file','image','mimes:jpg,jpeg,png']
         ];
         $this->validate($request, $params);
 
