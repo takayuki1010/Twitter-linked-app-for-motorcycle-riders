@@ -9,9 +9,8 @@ php自作
 
 ## 使い方
 ### テストデータ  
-name:小玉  
-password（初期:222222  
-email:snsbikerenkei1010@gmail.com  
+name:テスト１  
+password（初期:１１１１１１   
 
 ### 登録ユーザー  
 ダミーデータ  
